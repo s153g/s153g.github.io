@@ -9,7 +9,7 @@
   <title>用c++实现贪吃蛇 | 未拥的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="作为一只小白，肯定特别渴望写出自己秃头史上的第一个“贪吃蛇”，我和大家是一样的，在这个小游戏中，我主要用到了二维数组和单链表的知识，以及部分Windows包中的一些操作，这些我都会给大家解释的，希望你也能写出你的贪吃蛇。">
-<meta name="keywords" content="c++ 贪吃蛇">
+<meta name="keywords" content="c++,贪吃蛇">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用c++实现贪吃蛇">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;23&#x2F;%E7%94%A8c++%E5%AE%9E%E7%8E%B0%E8%B4%AA%E5%90%83%E8%9B%87&#x2F;index.html">
@@ -19,7 +19,7 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;23&#x2F;%E7%94%A8c++%E5%AE%9E%E7%8E%B0%E8%B4%AA%E5%90%83%E8%9B%87&#x2F;%E5%A2%99%E5%A3%81.jpg">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;23&#x2F;%E7%94%A8c++%E5%AE%9E%E7%8E%B0%E8%B4%AA%E5%90%83%E8%9B%87&#x2F;%E9%A3%9F%E7%89%A9.jpg">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;23&#x2F;%E7%94%A8c++%E5%AE%9E%E7%8E%B0%E8%B4%AA%E5%90%83%E8%9B%87&#x2F;%E8%BE%93%E5%87%BA.jpg">
-<meta property="og:updated_time" content="2019-11-23T08:52:07.422Z">
+<meta property="og:updated_time" content="2019-11-23T11:04:07.843Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;23&#x2F;%E7%94%A8c++%E5%AE%9E%E7%8E%B0%E8%B4%AA%E5%90%83%E8%9B%87&#x2F;%E5%A2%99%E5%A3%81.jpg">
   
@@ -62,7 +62,9 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+				<li><a href="/categories">分类</a></li>
+	        
+				<li><a href="/archives">归档</a></li>
 	        
 			</ul>
 		</nav>
@@ -120,6 +122,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -137,12 +141,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/categories">分类</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/archives">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -287,13 +293,32 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">c++ 贪吃蛇</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">c++</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">贪吃蛇</a>
         		</li>
       		
 		</ul>
 	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/c//" class="article-tag-list-link color4">c++</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/c/贪吃蛇//" class="article-tag-list-link color4">贪吃蛇</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -501,23 +526,43 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">jieba库案例</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Java 四则运算 分数的运算</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">多重继承</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">c++ 贪吃蛇</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">jieba库案例</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">c++ 模拟停车场管理 经典案例 详细注释</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">四则运算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">分数的运算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">c++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">模拟停车场管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">经典案例</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">详细注释</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">贪吃蛇</a>
               </li>
             
             <div class="clearfix"></div>
