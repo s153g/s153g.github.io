@@ -4056,10 +4056,10 @@ a.pswp__share--download:hover {
     color: #ccc;
 }
 
-    .pswp__error-msg a {
-        color: #ccc;
-        text-decoration: underline;
-    }
+.pswp__error-msg a {
+    color: #ccc;
+    text-decoration: underline;
+}
 
 category-all-page {
     margin: 30px 40px 30px 40px;

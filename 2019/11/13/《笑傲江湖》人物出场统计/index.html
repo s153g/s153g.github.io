@@ -17,7 +17,7 @@
 <meta property="og:description" content="本文是关于jieba库使用的一个经典案例，《笑傲江湖》人物出场统计，输出人物出场排名前十的名字。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;13&#x2F;%E3%80%8A%E7%AC%91%E5%82%B2%E6%B1%9F%E6%B9%96%E3%80%8B%E4%BA%BA%E7%89%A9%E5%87%BA%E5%9C%BA%E7%BB%9F%E8%AE%A1&#x2F;xajh%E8%BE%93%E5%87%BA.jpg">
-<meta property="og:updated_time" content="2019-11-23T11:01:17.197Z">
+<meta property="og:updated_time" content="2019-11-23T11:37:45.966Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;13&#x2F;%E3%80%8A%E7%AC%91%E5%82%B2%E6%B1%9F%E6%B9%96%E3%80%8B%E4%BA%BA%E7%89%A9%E5%87%BA%E5%9C%BA%E7%BB%9F%E8%AE%A1&#x2F;xajh%E8%BE%93%E5%87%BA.jpg">
   
@@ -73,8 +73,6 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)" target="_blank" rel="noopener">友链</a>
-    			
             
     			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)" target="_blank" rel="noopener">关于我</a>
@@ -86,11 +84,7 @@
 				
 					<a class="github" target="_blank" href="https://github.com/s153g" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="mail" target="_blank" href="/1374507474@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -129,11 +123,7 @@
 					
 						<a class="github" target="_blank" href="https://github.com/s153g" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="mail" target="_blank" href="/1374507474@qq.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -161,220 +151,29 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-《笑傲江湖》人物出场统计" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            <header class="article-header">
+  
   
     <h1 class="article-title" itemprop="name">
       《笑傲江湖》人物出场统计
     </h1>
   
 
-        
-        <a href="/2019/11/13/%E3%80%8A%E7%AC%91%E5%82%B2%E6%B1%9F%E6%B9%96%E3%80%8B%E4%BA%BA%E7%89%A9%E5%87%BA%E5%9C%BA%E7%BB%9F%E8%AE%A1/" class="archive-article-date">
+  
+  <a href="/2019/11/13/%E3%80%8A%E7%AC%91%E5%82%B2%E6%B1%9F%E6%B9%96%E3%80%8B%E4%BA%BA%E7%89%A9%E5%87%BA%E5%9C%BA%E7%BB%9F%E8%AE%A1/" class="archive-article-date">
   	<time datetime="2019-11-13T11:49:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-13</time>
 </a>
-        
-      </header>
+  
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本文是关于jieba库使用的一个经典案例，《笑傲江湖》人物出场统计，输出人物出场排名前十的名字。</p>
-<a id="more"></a>
-
-<h3 id="安装jieba库"><a href="#安装jieba库" class="headerlink" title="安装jieba库"></a>安装jieba库</h3><p>cmd输入：pip3 install jieba</p>
-<h3 id="《笑傲江湖》人物出场统计"><a href="#《笑傲江湖》人物出场统计" class="headerlink" title="《笑傲江湖》人物出场统计"></a>《笑傲江湖》人物出场统计</h3><p>人物出场统计涉及对词汇的统计。中文文章需要分词才能进行词频统计，这需要用到jieba库。《笑傲江湖》文本保存为xajh.text。实现代码如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> jieba</span><br><span class="line">excludes=&#123;<span class="string">"甚么"</span>,<span class="string">"说道"</span>,<span class="string">"自己"</span>,<span class="string">"一个"</span>,<span class="string">"师父"</span>,<span class="string">"剑法"</span>,<span class="string">"咱们"</span>,<span class="string">"弟子"</span>,<span class="string">"一声"</span>,<span class="string">"不是"</span>,<span class="string">"恒山"</span>,<span class="string">"他们"</span>,<span class="string">"长剑"</span>,<span class="string">"出来"</span>,<span class="string">"不知"</span>,<span class="string">"知道"</span>,<span class="string">"武功"</span>,<span class="string">"二人"</span>,<span class="string">"只是"</span>,<span class="string">"突然"</span>,<span class="string">"嵩山"</span>,<span class="string">"我们"</span>,<span class="string">"心想"</span>,<span class="string">"如此"</span>,<span class="string">"倘若"</span>,<span class="string">"如何"</span>,<span class="string">"你们"</span>,<span class="string">"便是"</span>&#125;</span><br><span class="line">filename=<span class="string">""</span>                     <span class="comment">#定义一个空字符串</span></span><br><span class="line">filename=<span class="string">r"C:\Users\pc\AppData\Local\Programs\Python\python例子\xajh.txt"</span><span class="comment">#文件夹位置</span></span><br><span class="line">txt=open(filename,<span class="string">'r'</span>,encoding=<span class="string">'utf-8'</span>).read()</span><br><span class="line">words=jieba.lcut(txt)</span><br><span class="line">counts=&#123;&#125;                    	<span class="comment">#定义counts为一个空集合</span></span><br><span class="line"><span class="keyword">for</span> word <span class="keyword">in</span> words:</span><br><span class="line">    <span class="keyword">if</span> len(word) == <span class="number">1</span>:          <span class="comment">#排除单个字符的分词结果</span></span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">elif</span> word == <span class="string">"大师哥"</span> <span class="keyword">or</span> word == <span class="string">"冲儿"</span> <span class="keyword">or</span> word == <span class="string">"冲哥"</span> <span class="keyword">or</span> word == <span class="string">"令狐大哥"</span> <span class="keyword">or</span> word == <span class="string">"令狐掌门"</span>:</span><br><span class="line">        rword=<span class="string">"令狐冲"</span></span><br><span class="line">    <span class="keyword">elif</span> word == <span class="string">"师妹"</span>:</span><br><span class="line">        rword=<span class="string">"盈盈"</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        rword=word</span><br><span class="line">    counts[rword]=counts.get(rword,<span class="number">0</span>) +<span class="number">1</span></span><br><span class="line">	<span class="comment">#如果word在counts中，则返回word对应的值，否则返回0</span></span><br><span class="line"><span class="keyword">for</span> word <span class="keyword">in</span> excludes:</span><br><span class="line">    <span class="keyword">del</span>(counts[word])           <span class="comment">#排除词库excludes</span></span><br><span class="line">items = list(counts.items())    <span class="comment">#将字典转换为记录列表</span></span><br><span class="line">items.sort(key=<span class="keyword">lambda</span> x:x[<span class="number">1</span>],reverse=<span class="literal">True</span>)   <span class="comment">#以记录第二列排序</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">    word,count=items[i]</span><br><span class="line">    print(<span class="string">"&#123;0:&lt;10&#125;&#123;1:&gt;5&#125;"</span>.format(word,count))</span><br></pre></td></tr></table></figure>
-
-<p>上面代码是加入了排除词库excludes的代码，一开始分词频率最高的是“甚么”，“说道”之类的，这就需要我们加入排除词库excludes，并一点点扩大，排除那些人名无关的词汇。最后输出结果如下：（本人不太清楚笑傲江湖的人物关系构造，可能会出现人物重叠，结果仅供参考）</p>
-<p><img src="/2019/11/13/%E3%80%8A%E7%AC%91%E5%82%B2%E6%B1%9F%E6%B9%96%E3%80%8B%E4%BA%BA%E7%89%A9%E5%87%BA%E5%9C%BA%E7%BB%9F%E8%AE%A1/xajh%E8%BE%93%E5%87%BA.jpg" alt></p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" target="_blank" rel="noopener" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/alipay.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/weixin.png">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">jieba库案例</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/jieba库案例//" class="article-tag-list-link color4">jieba库案例</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" target="_blank" rel="noopener" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
+    
+  
+    <span class="archive-article-date">
+        阅读量 <span id="busuanzi_value_page_pv"></span>
     </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/13/%E3%80%8A%E7%AC%91%E5%82%B2%E6%B1%9F%E6%B9%96%E3%80%8B%E4%BA%BA%E7%89%A9%E5%87%BA%E5%9C%BA%E7%BB%9F%E8%AE%A1/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
   
-<nav id="article-nav">
-  
-    <a href="/2019/11/13/%E7%94%A8Java%E5%AE%9E%E7%8E%B0%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          用Java实现四则运算
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2019/11/11/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">hexo搭建博客</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装jieba库"><span class="toc-number">1.</span> <span class="toc-text">安装jieba库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#《笑傲江湖》人物出场统计"><span class="toc-number">2.</span> <span class="toc-text">《笑傲江湖》人物出场统计</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
-  
-
-  
-
-  
-
-  
-
-
+    
+    
+</header>
           </div>
         </div>
       </div>
@@ -382,17 +181,45 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
+        <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+  var now = new Date(); 
+  function createtime() { 
+    var grt= new Date("11/23/2018 20:00:00");//此处修改你的建站时间或者网站上线时间 
+    now.setTime(now.getTime()+250); 
+    days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+    hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+    if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+    mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+    seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+    snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+    document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+    document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+  } 
+  setInterval("createtime()",250);
+</script>
     		&copy; 2019 未拥
     	</div>
-	<script type="text/javascript">
-		var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1278210674'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/z_stat.php%3Fid%3D1278210674%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));
-	</script>
       	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+    
+    
+            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      		<span id="busuanzi_container_site_pv">
+                本站总访问量：<span id="busuanzi_value_site_pv"></span>次
+            </span>
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_container_site_uv">
+                本站访客数：<span id="busuanzi_value_site_uv"></span>人
+            </span>
+    
+    
       	</div>
     </div>
   </div>
+  <!--页面点击小红心-->
+<script type="text/javascript" src="/love.js"></script>
 </footer>
+
     </div>
     <script>
 	var yiliaConfig = {
@@ -426,8 +253,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
     
       
-      
-      
     
       
       
@@ -439,15 +264,13 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" target="_blank" rel="noopener" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" target="_blank" rel="noopener" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" target="_blank" rel="noopener" q-class="active:friends">友链</a></li>
-      
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" target="_blank" rel="noopener" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" target="_blank" rel="noopener" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -468,23 +291,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">多重继承</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">jieba库案例</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">四则运算</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">分数的运算</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">多重继承</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -504,7 +315,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">四则运算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">分数的运算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">贪吃蛇</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">hexo搭建博客</a>
               </li>
             
             <div class="clearfix"></div>
@@ -550,38 +377,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     	</section>
     
 
-    
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
     
 
     

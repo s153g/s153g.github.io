@@ -19,7 +19,7 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;23&#x2F;%E7%94%A8c++%E5%AE%9E%E7%8E%B0%E8%B4%AA%E5%90%83%E8%9B%87&#x2F;%E5%A2%99%E5%A3%81.jpg">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;23&#x2F;%E7%94%A8c++%E5%AE%9E%E7%8E%B0%E8%B4%AA%E5%90%83%E8%9B%87&#x2F;%E9%A3%9F%E7%89%A9.jpg">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;23&#x2F;%E7%94%A8c++%E5%AE%9E%E7%8E%B0%E8%B4%AA%E5%90%83%E8%9B%87&#x2F;%E8%BE%93%E5%87%BA.jpg">
-<meta property="og:updated_time" content="2019-11-23T11:04:07.843Z">
+<meta property="og:updated_time" content="2019-11-23T11:37:15.394Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;23&#x2F;%E7%94%A8c++%E5%AE%9E%E7%8E%B0%E8%B4%AA%E5%90%83%E8%9B%87&#x2F;%E5%A2%99%E5%A3%81.jpg">
   
@@ -75,8 +75,6 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)" target="_blank" rel="noopener">友链</a>
-    			
             
     			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)" target="_blank" rel="noopener">关于我</a>
@@ -88,11 +86,7 @@
 				
 					<a class="github" target="_blank" href="https://github.com/s153g" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="mail" target="_blank" href="/1374507474@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -131,11 +125,7 @@
 					
 						<a class="github" target="_blank" href="https://github.com/s153g" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="mail" target="_blank" href="/1374507474@qq.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -163,276 +153,29 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-用c++实现贪吃蛇" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            <header class="article-header">
+  
   
     <h1 class="article-title" itemprop="name">
       用c++实现贪吃蛇
     </h1>
   
 
-        
-        <a href="/2019/11/23/%E7%94%A8c++%E5%AE%9E%E7%8E%B0%E8%B4%AA%E5%90%83%E8%9B%87/" class="archive-article-date">
+  
+  <a href="/2019/11/23/%E7%94%A8c++%E5%AE%9E%E7%8E%B0%E8%B4%AA%E5%90%83%E8%9B%87/" class="archive-article-date">
   	<time datetime="2019-11-23T06:46:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-23</time>
 </a>
-        
-      </header>
+  
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>作为一只小白，肯定特别渴望写出自己秃头史上的第一个“贪吃蛇”，我和大家是一样的，在这个小游戏中，我主要用到了二维数组和单链表的知识，以及部分Windows包中的一些操作，这些我都会给大家解释的，希望你也能写出你的贪吃蛇。</p>
-<a id="more"></a>
-
-<h2 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h2><ol>
-<li>墙</li>
-</ol>
-<p>墙壁部分我应用的是二维数组，包括整个棋盘，这样便于获取蛇的坐标以及便于编写墙壁</p>
-<ol start="2">
-<li>食物</li>
-</ol>
-<p>食物的产生由srand()和rand()函数随机产生</p>
-<ol start="3">
-<li>蛇</li>
-</ol>
-<p>整个蛇包括蛇头蛇尾用的是一个单链表的知识，蛇的移动通过头结点坐标的加减，重新设置头结点，删除尾结点来实现（没吃到食物的情况下）。而当吃到食物的时候，头结点增加，尾结点不变（不进行删除操作），从而实现蛇的长度+1</p>
-<ol start="4">
-<li>获取键盘的操作</li>
-</ol>
-<p>这个用到了&lt;conio.h&gt;包中的一些函数，<em>_kbhit(),</em> _getch()函数，这个下面我会对他们的功能进行解释（文章最后）</p>
-<ol start="5">
-<li>一些不知名的函数</li>
-</ol>
-<p>这个函数是移动在控制台屏幕上的坐标，具体什么意思我也不是很明白，想进一步了解的同学可以去百度一下子</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//移动在控制台屏幕上的坐标</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">gotoxy</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	COORD pos = &#123;x,y&#125;;</span><br><span class="line">	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);</span><br><span class="line">	SetConsoleCursorPosition(handle,pos);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="具体分析"><a href="#具体分析" class="headerlink" title="具体分析"></a>具体分析</h2><h3 id="宏定义"><a href="#宏定义" class="headerlink" title="宏定义"></a>宏定义</h3><p>为了方便程序的修改，提高程序的运行效率我们使用了大量的宏定义，比如我们把墙壁设置成了‘*’符号，以后想改动墙的形状的时候不用再一个个改了，直接在common文件中一改就好了，十分方便。还有每个人的键盘的值可能不太一样，这就需要大家去测试一下，程序非常简单，我就不放了，百度一下就有了，下面直接放宏定义的代码</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//common.h		文件名</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdafx.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once <span class="comment">//防止头文件重重包含</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CHAR_WALL <span class="meta-string">'*'</span> <span class="comment">//墙</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CHAR_HEAD <span class="meta-string">'@'</span> <span class="comment">//蛇头</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CHAR_BODY <span class="meta-string">'#'</span> <span class="comment">//蛇身体</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CHAR_FOOD <span class="meta-string">'%'</span> <span class="comment">//蛇食物</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//方向键，上下左右</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> UP 72</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DOWN 80</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LEFT 75</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> RIGHT 77</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//声明一个全局的二维数组</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ROW 10</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> COL 10</span></span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">char</span> game[ROW][COL];</span><br><span class="line"></span><br><span class="line"><span class="comment">//移动在控制台屏幕上的坐标</span></span><br><span class="line"><span class="function"><span class="keyword">extern</span> <span class="keyword">void</span> <span class="title">gotoxy</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//common.cpp		文件名</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdafx.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdafx.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"common.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Windows.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//全局变量的定义</span></span><br><span class="line"><span class="keyword">char</span> game[ROW][COL]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//移动在控制台屏幕上的坐标</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">gotoxy</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	COORD pos = &#123;x,y&#125;;</span><br><span class="line">	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);</span><br><span class="line">	SetConsoleCursorPosition(handle,pos);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="墙及食物"><a href="#墙及食物" class="headerlink" title="墙及食物"></a>墙及食物</h3><p>墙的设置我们使用了一个二维数组，墙这部分的设置比较容易，我也在代码中进行了详细的注释，在这我就不做过多的解释了,只提示两个比较重要的地方叭</p>
-<p><img src="/2019/11/23/%E7%94%A8c++%E5%AE%9E%E7%8E%B0%E8%B4%AA%E5%90%83%E8%9B%87/%E5%A2%99%E5%A3%81.jpg" alt></p>
-<p>注意观察围墙的坐标，寻找规律!</p>
-<p><img src="/2019/11/23/%E7%94%A8c++%E5%AE%9E%E7%8E%B0%E8%B4%AA%E5%90%83%E8%9B%87/%E9%A3%9F%E7%89%A9.jpg" alt></p>
-<p>food_x = rand() % (ROW - 2) + 1;    //x<br>food_y = rand() % (COL - 2) + 1;        //y</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//wall.h		文件名</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdafx.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once	<span class="comment">//防止头文件重重包含</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">extern</span> <span class="keyword">void</span> <span class="title">init_wall</span><span class="params">()</span></span>;	<span class="comment">//初始化，设置墙壁</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">extern</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span></span>;			<span class="comment">//打印数组中的元素，绘图</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">extern</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> j,<span class="keyword">char</span> ch)</span></span>;	<span class="comment">//改变数组某个元素（对应下标）的内容</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">extern</span> <span class="keyword">char</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span></span>;	<span class="comment">//获取数组某个元素（对应下标）的内容</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">extern</span> <span class="keyword">int</span> <span class="title">is_touch</span><span class="params">()</span></span>;			<span class="comment">//判断蛇是否碰墙，如果碰墙返回1，没有返回0</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">extern</span> <span class="keyword">void</span> <span class="title">set_food</span><span class="params">()</span></span>;			<span class="comment">//设置食物</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">extern</span> <span class="keyword">int</span> <span class="title">get_food_x</span><span class="params">()</span></span>;		<span class="comment">//设置食物x的下标</span></span><br><span class="line"><span class="function"><span class="keyword">extern</span> <span class="keyword">int</span> <span class="title">get_food_y</span><span class="params">()</span></span>;		<span class="comment">//设置食物y的下标</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//wall.cpp		文件名</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdafx.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"common.h"</span>		<span class="comment">//char game[ROW][COL]</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;		//memset</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;		//printf()</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;		//srand(),rand()</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;		//time()</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//定义食物坐标</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> food_x,food_y;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init_wall</span><span class="params">()</span>	<span class="comment">//初始化，设置墙壁</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(game,<span class="number">0</span>,<span class="keyword">sizeof</span>(game));		<span class="comment">//将s中当前位置后面n个字节用ch替换并返回s</span></span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> j=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;ROW;++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;COL;++j)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(i==<span class="number">0</span> || i==ROW<span class="number">-1</span> || j==<span class="number">0</span> || j==COL<span class="number">-1</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				game[i][j]= CHAR_WALL;	<span class="comment">//墙壁</span></span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				game[i][j]=<span class="string">' '</span>;			<span class="comment">//游戏盒子内部</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span>							<span class="comment">//打印数组中的元素</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> j=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;ROW;++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;COL;++j)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%c "</span>,game[i][j]);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">set</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> j,<span class="keyword">char</span> ch)</span>	<span class="comment">//改变数组某个元素（对应下标）的内容</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	game[i][j]=ch;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">char</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span>	<span class="comment">//获取数组某个元素（对应下标）的内容</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> game[i][j];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">is_touch</span><span class="params">()</span>			<span class="comment">//判断蛇是否碰墙，如果碰墙返回1，没有返回0</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> j=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;ROW;++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;COL;++j)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(i==<span class="number">0</span> || i==ROW<span class="number">-1</span> || j==<span class="number">0</span> || j==COL<span class="number">-1</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>(game[i][j] == CHAR_HEAD)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">set_food</span><span class="params">()</span>			<span class="comment">//设置食物</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">//1.随机坐标</span></span><br><span class="line"><span class="comment">//2.食物不能在墙壁上</span></span><br><span class="line"><span class="comment">//3.食物不能在蛇身上</span></span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		srand((<span class="keyword">unsigned</span> <span class="keyword">int</span>)time(<span class="literal">NULL</span>));		<span class="comment">//设置种子</span></span><br><span class="line"></span><br><span class="line">		food_x = rand() % (ROW - <span class="number">2</span>) + <span class="number">1</span>;		<span class="comment">//x</span></span><br><span class="line">		food_y = rand() % (COL - <span class="number">2</span>) + <span class="number">1</span>;		<span class="comment">//y</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span>(game[food_x][food_y] != CHAR_HEAD &amp;&amp; game[food_x][food_y] != CHAR_BODY)</span><br><span class="line">		&#123;</span><br><span class="line">			game[food_x][food_y] = CHAR_FOOD;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">get_food_x</span><span class="params">()</span>		<span class="comment">//获取食物x的下标</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> food_x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">get_food_y</span><span class="params">()</span>		<span class="comment">//获取食物y的下标</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> food_y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="蛇的移动"><a href="#蛇的移动" class="headerlink" title="蛇的移动"></a>蛇的移动</h3><p>增加结点：</p>
-<ol>
-<li>把新增加的结点设置蛇头</li>
-<li>把原来的头结点的内容设置为蛇的身体</li>
-<li>把尾结点对应的内容设置为空，把尾结点删除</li>
-</ol>
-<p>删除尾结点：</p>
-<ol>
-<li>tmp就是尾结点，pre为尾结点的上一个结点</li>
-<li>把尾结点对应的内容设置为空，然后把尾结点删除</li>
-</ol>
-<p>蛇的移动：</p>
-<ol>
-<li>如果碰到了墙壁或者身体，返回0</li>
-<li>如果成功移动，仅仅是移动，并没有碰到墙壁或身体，或者吃到了食物，返回1</li>
-</ol>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//snake.h		文件名</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdafx.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once	<span class="comment">//防止头文件重复</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Point</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> x,y;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Point</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;Point;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">extern</span> <span class="keyword">void</span> <span class="title">init_snake</span><span class="params">()</span></span>;		<span class="comment">//初始化蛇</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">extern</span> <span class="keyword">void</span> <span class="title">free_snake</span><span class="params">()</span></span>;		<span class="comment">//释放结点</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//如果成功移动，仅仅是移动，并没有碰到墙壁或身体，或者吃到了食物，返回1</span></span><br><span class="line"><span class="comment">//如果碰到了墙壁或者身体，返回0</span></span><br><span class="line"><span class="function"><span class="keyword">extern</span> <span class="keyword">int</span> <span class="title">snake_move</span><span class="params">(<span class="keyword">char</span> key)</span></span>;	<span class="comment">//蛇的移动</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//snake.cpp		文件名</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdafx.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"snake.h"</span>	<span class="comment">//Point</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;	//NULL</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;	//malloc</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"wall.h"</span>	<span class="comment">//set</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"common.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//static变量，只能本文件使用</span></span><br><span class="line"><span class="keyword">static</span> Point *head=<span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//static变量，只能本文件使用</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">add_point</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Point *pnew=(Point *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Point));</span><br><span class="line">	pnew-&gt;x=x;</span><br><span class="line">	pnew-&gt;y=y;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(head == <span class="literal">NULL</span>)		<span class="comment">//没有结点的时候，头结点就是尾结点</span></span><br><span class="line">	&#123;</span><br><span class="line">		head=pnew;</span><br><span class="line">		pnew-&gt;next=<span class="literal">NULL</span>;	<span class="comment">//尾结点</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;<span class="comment">//原来就存在结点，新节点就成为头结点</span></span><br><span class="line">		<span class="comment">//1.把原来头结点的内容设置为蛇的身体</span></span><br><span class="line">		<span class="built_in">set</span>(head-&gt;x,head-&gt;y,CHAR_BODY);</span><br><span class="line">		<span class="comment">//2.新节点当做头结点</span></span><br><span class="line">		pnew-&gt;next=head;</span><br><span class="line">		head=pnew;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//设置头结点的内容</span></span><br><span class="line">	<span class="built_in">set</span>(head-&gt;x,head-&gt;y,CHAR_HEAD);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">free_snake</span><span class="params">()</span>		<span class="comment">//释放结点</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Point *del = head;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(del!=<span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		head=head-&gt;next;	<span class="comment">//释放前，先保存下一个结点</span></span><br><span class="line">		<span class="built_in">free</span>(del);			<span class="comment">//释放结点</span></span><br><span class="line">		del = head;			<span class="comment">//重新设置需要释放的结点</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	head=<span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init_snake</span><span class="params">()</span>			<span class="comment">//初始化蛇</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	free_snake();			<span class="comment">//释放节点，有可能是重新开始的游戏，这就需要先清空链表</span></span><br><span class="line"></span><br><span class="line">	add_point(<span class="number">4</span>,<span class="number">2</span>);</span><br><span class="line">	add_point(<span class="number">4</span>,<span class="number">3</span>);</span><br><span class="line">	add_point(<span class="number">4</span>,<span class="number">4</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//删除尾结点</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">del_point</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//必须有两个结点才能做删除尾结点的操作</span></span><br><span class="line">	<span class="keyword">if</span>(head==<span class="literal">NULL</span> || head-&gt;next==<span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//pre和tmp相差一个结点，tmp靠后</span></span><br><span class="line">	Point *pre=head;</span><br><span class="line">	Point *tmp=head-&gt;next;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(tmp-&gt;next!=<span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//结点各自向后移动</span></span><br><span class="line">		pre=pre-&gt;next;</span><br><span class="line">		tmp=tmp-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//tmp就是尾结点，pre为尾结点的上一个结点</span></span><br><span class="line">	<span class="comment">//把尾结点对应的内容设置为空，然后把尾结点删除</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">set</span>(tmp-&gt;x,tmp-&gt;y,<span class="string">' '</span>);			<span class="comment">//把尾结点内容设置为空</span></span><br><span class="line">	<span class="built_in">free</span>(tmp);</span><br><span class="line">	tmp=<span class="literal">NULL</span>;</span><br><span class="line">	pre-&gt;next=<span class="literal">NULL</span>;					<span class="comment">//重新设置这个尾结点,pre现在为尾结点</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//如果成功移动，仅仅是移动，并没有碰到墙壁或身体，或者吃到了食物，返回1</span></span><br><span class="line"><span class="comment">//如果碰到了墙壁或者身体，返回0</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">snake_move</span><span class="params">(<span class="keyword">char</span> key)</span>	<span class="comment">//蛇的移动</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i=head-&gt;x;</span><br><span class="line">	<span class="keyword">int</span> j=head-&gt;y;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//方向的移动</span></span><br><span class="line">	<span class="keyword">switch</span>(key)</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="keyword">case</span> UP:</span><br><span class="line">		--i;<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> DOWN:</span><br><span class="line">		++i;<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> LEFT:</span><br><span class="line">		--j;<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> RIGHT:</span><br><span class="line">		++j;<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//判断蛇是否碰到了墙壁或者身体</span></span><br><span class="line">	<span class="keyword">if</span>(<span class="number">1</span> == is_touch() || game[i][j]==CHAR_BODY)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//如果成功移动，仅仅是移动，并没有碰到墙壁或身体，或者吃到了食物，返回1</span></span><br><span class="line">	<span class="keyword">if</span>(i==get_food_x() &amp;&amp; j==get_food_y())</span><br><span class="line">	&#123;</span><br><span class="line">		add_point(i,j);				<span class="comment">//设置头结点</span></span><br><span class="line">		set_food();					<span class="comment">//重新设置食物</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		add_point(i,j);</span><br><span class="line">		del_point();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="主函数"><a href="#主函数" class="headerlink" title="主函数"></a>主函数</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdafx.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"wall.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"snake.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;conio.h&gt;		//_getch(),获取键盘的输入</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"common.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Windows.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> is_start=<span class="number">1</span>;		<span class="comment">//1代表游戏开始，0代表结束</span></span><br><span class="line">	<span class="keyword">int</span> is_dead=<span class="number">0</span>;		<span class="comment">//0代表蛇还活着，1代表死亡</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span> == is_start)	<span class="comment">//游戏开始</span></span><br><span class="line">	&#123;</span><br><span class="line">		is_dead=<span class="number">0</span>;			<span class="comment">//0代表还活着</span></span><br><span class="line"></span><br><span class="line">		init_wall();		<span class="comment">//初始化，设置墙壁</span></span><br><span class="line">		init_snake();</span><br><span class="line">		set_food();			<span class="comment">//设置食物</span></span><br><span class="line"></span><br><span class="line">		system(<span class="string">"cls"</span>);		<span class="comment">//清屏</span></span><br><span class="line">		draw();				<span class="comment">//打印数组的每个元素，绘图</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">while</span>(<span class="number">0</span> == is_dead)	<span class="comment">//0代表还活着，接下来控制蛇进行移动</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">char</span> key=_getch();<span class="comment">//读取键盘的方向键</span></span><br><span class="line"></span><br><span class="line">			</span><br><span class="line">			<span class="comment">//如果键盘没有被按下，蛇沿着原来按下的方向一直前进</span></span><br><span class="line">			<span class="keyword">while</span>(<span class="number">0</span> == _kbhit())		<span class="comment">//_kbhit()功能：如果有键盘按下返回非0值，没有按下返回0</span></span><br><span class="line">			&#123;	<span class="keyword">if</span>(UP == key || DOWN == key || LEFT == key || RIGHT == key)</span><br><span class="line">				&#123;</span><br><span class="line">					gotoxy(<span class="number">0</span>,<span class="number">0</span>);		<span class="comment">//设置打印的位置从0，0开始</span></span><br><span class="line">				</span><br><span class="line">					<span class="comment">//如果成功移动，仅仅是移动，并没有碰到墙壁或身体，或者吃到了食物，返回1</span></span><br><span class="line">					<span class="comment">//如果碰到了墙壁或者身体，返回0</span></span><br><span class="line">					<span class="keyword">if</span>(<span class="number">1</span> == snake_move(key))</span><br><span class="line">					&#123;</span><br><span class="line">						draw();			<span class="comment">//绘图，重新打印数组的内容</span></span><br><span class="line">						Sleep(<span class="number">300</span>);		<span class="comment">//延时300毫秒</span></span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">else</span></span><br><span class="line">					&#123;</span><br><span class="line">						is_dead=<span class="number">1</span>;		<span class="comment">//蛇死亡</span></span><br><span class="line">						<span class="keyword">break</span>;			<span class="comment">//while(0 == kbhit())</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="kbhit-及-getch"><a href="#kbhit-及-getch" class="headerlink" title="_kbhit()及 _getch()"></a><em>_kbhit()及</em> _getch()</h3><p>_kbhit()：如果有键盘按下返回非0值，没有按下返回0</p>
-<p>头文件： #include &lt;conio.h&gt; </p>
-<p>_getch()：读取键盘的方向键</p>
-<p>头文件：#include &lt;conio.h&gt;</p>
-<h2 id="输出结果"><a href="#输出结果" class="headerlink" title="输出结果"></a>输出结果</h2><p><img src="/2019/11/23/%E7%94%A8c++%E5%AE%9E%E7%8E%B0%E8%B4%AA%E5%90%83%E8%9B%87/%E8%BE%93%E5%87%BA.jpg" alt></p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" target="_blank" rel="noopener" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/alipay.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/weixin.png">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">c++</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">贪吃蛇</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/c//" class="article-tag-list-link color4">c++</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/c/贪吃蛇//" class="article-tag-list-link color4">贪吃蛇</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" target="_blank" rel="noopener" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
+    
+  
+    <span class="archive-article-date">
+        阅读量 <span id="busuanzi_value_page_pv"></span>
     </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/23/%E7%94%A8c++%E5%AE%9E%E7%8E%B0%E8%B4%AA%E5%90%83%E8%9B%87/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
   
-<nav id="article-nav">
-  
-  
-    <a href="/2019/11/17/%E5%A4%9A%E9%87%8D%E7%BB%A7%E6%89%BF%E6%A1%88%E4%BE%8B/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">多重继承案例</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本思路"><span class="toc-number">1.</span> <span class="toc-text">基本思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#具体分析"><span class="toc-number">2.</span> <span class="toc-text">具体分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#宏定义"><span class="toc-number">2.1.</span> <span class="toc-text">宏定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#墙及食物"><span class="toc-number">2.2.</span> <span class="toc-text">墙及食物</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#蛇的移动"><span class="toc-number">2.3.</span> <span class="toc-text">蛇的移动</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#主函数"><span class="toc-number">3.</span> <span class="toc-text">主函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#kbhit-及-getch"><span class="toc-number">3.1.</span> <span class="toc-text">_kbhit()及 _getch()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#输出结果"><span class="toc-number">4.</span> <span class="toc-text">输出结果</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
-  
-
-  
-
-  
-
-  
-
-
+    
+    
+</header>
           </div>
         </div>
       </div>
@@ -440,17 +183,45 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
+        <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+  var now = new Date(); 
+  function createtime() { 
+    var grt= new Date("11/23/2018 20:00:00");//此处修改你的建站时间或者网站上线时间 
+    now.setTime(now.getTime()+250); 
+    days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+    hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+    if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+    mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+    seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+    snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+    document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+    document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+  } 
+  setInterval("createtime()",250);
+</script>
     		&copy; 2019 未拥
     	</div>
-	<script type="text/javascript">
-		var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1278210674'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/z_stat.php%3Fid%3D1278210674%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));
-	</script>
       	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+    
+    
+            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      		<span id="busuanzi_container_site_pv">
+                本站总访问量：<span id="busuanzi_value_site_pv"></span>次
+            </span>
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_container_site_uv">
+                本站访客数：<span id="busuanzi_value_site_uv"></span>人
+            </span>
+    
+    
       	</div>
     </div>
   </div>
+  <!--页面点击小红心-->
+<script type="text/javascript" src="/love.js"></script>
 </footer>
+
     </div>
     <script>
 	var yiliaConfig = {
@@ -484,8 +255,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
     
       
-      
-      
     
       
       
@@ -497,15 +266,13 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" target="_blank" rel="noopener" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" target="_blank" rel="noopener" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" target="_blank" rel="noopener" q-class="active:friends">友链</a></li>
-      
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" target="_blank" rel="noopener" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" target="_blank" rel="noopener" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -526,23 +293,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">多重继承</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">jieba库案例</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">四则运算</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">分数的运算</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">多重继承</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -562,7 +317,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">四则运算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">分数的运算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">贪吃蛇</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">hexo搭建博客</a>
               </li>
             
             <div class="clearfix"></div>
@@ -608,38 +379,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     	</section>
     
 
-    
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
     
 
     
